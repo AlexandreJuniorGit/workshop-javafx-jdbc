@@ -34,7 +34,7 @@ public class MainViewController implements Initializable{
 	
 	@FXML
 	public void onMenuItemDepartmentAction() {
-		
+		loadView("/gui/DepartmentList.fxml");
 	}
 	
 	@FXML
@@ -50,6 +50,12 @@ public class MainViewController implements Initializable{
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVBox = loader.load();
+
+			//TEST this stretch open a new window with the AboutView content...
+//			Scene scene = new Scene(newVBox);
+//			Stage stage = new Stage();
+//			stage.setScene(scene);
+//			stage.show();
 			
 			Scene mainScene = Main.getMainScene();
 			VBox mainVBox = (VBox) ((ScrollPane) mainScene.getRoot()).getContent();
